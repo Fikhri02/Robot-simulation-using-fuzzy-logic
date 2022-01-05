@@ -1,0 +1,83 @@
+[System]
+Name='article_fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Lsensor'
+Range=[0 1]
+NumMFs=3
+MF1='near':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='medium':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='far':'trimf',[0.5833 1 1.417]
+
+[Input2]
+Name='Msensor'
+Range=[0 1]
+NumMFs=3
+MF1='near':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='medium':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='far':'trimf',[0.583333333333333 1 1.41666666666667]
+
+[Input3]
+Name='Rsensor'
+Range=[0 1]
+NumMFs=3
+MF1='near':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF2='medium':'trimf',[0.0833333333333333 0.5 0.916666666666667]
+MF3='far':'trimf',[0.583333333333333 1 1.41666666666667]
+
+[Output1]
+Name='L_motor'
+Range=[-4 4]
+NumMFs=4
+MF1='reverse':'trimf',[-6.688 -4.019 -1.354]
+MF2='slow':'trimf',[-4 -1.334 1.334]
+MF3='medium':'trimf',[-1.334 1.334 4]
+MF4='fast':'trimf',[1.334 4 6.664]
+
+[Output2]
+Name='R_motor'
+Range=[-4 4]
+NumMFs=4
+MF1='reverse':'trimf',[-6.664 -4 -1.334]
+MF2='slow':'trimf',[-4 -1.334 1.334]
+MF3='medium':'trimf',[-1.334 1.334 4]
+MF4='fast':'trimf',[1.334 4 6.664]
+
+[Rules]
+3 3 3, 4 4 (1) : 1
+3 3 2, 3 4 (1) : 1
+3 3 1, 2 4 (1) : 1
+3 2 3, 2 2 (1) : 1
+3 1 3, 2 1 (1) : 1
+3 2 2, 2 3 (1) : 1
+3 2 1, 2 4 (1) : 1
+3 1 2, 1 2 (1) : 1
+3 1 1, 1 2 (1) : 1
+2 3 3, 4 3 (1) : 1
+2 3 2, 3 3 (1) : 1
+2 3 1, 2 3 (1) : 1
+2 2 3, 4 3 (1) : 1
+2 2 2, 2 2 (1) : 1
+2 2 1, 2 3 (1) : 1
+2 1 3, 2 1 (1) : 1
+2 1 2, 1 1 (1) : 1
+2 1 1, 2 3 (1) : 1
+1 3 3, 2 1 (1) : 1
+1 3 2, 3 2 (1) : 1
+1 3 1, 3 3 (1) : 1
+1 2 3, 4 3 (1) : 1
+1 2 2, 3 2 (1) : 1
+1 2 1, 2 2 (1) : 1
+1 1 3, 1 1 (1) : 1
+1 1 2, 2 1 (1) : 1
+1 1 1, 1 1 (1) : 1

@@ -7,3 +7,4 @@ Robot dynamic obstacle avoidance using fuzzy logic via Coppeliasim and Matlab
 5. Add path to matlab before running the program.
 6. Run the robot simulation before running the matlab simulation.
 7. Realtime sensor value are updated in the commmand window.
+8. Video demonstration: https://www.youtube.com/watch?v=cGoHG_bfBHA
